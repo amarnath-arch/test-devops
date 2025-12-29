@@ -10,4 +10,10 @@ jobs:
     steps:
       - name: deploy
         run: |
-          echo "hello world"
+          echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
+          ssh -i ~/ssh_key -o StrictHostKeyChecking=no ubuntu@13.51.177.234
+          cd test-devops
+          git pull
+          npm install
+          npm run build
+          npm run start
