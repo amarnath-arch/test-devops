@@ -11,6 +11,7 @@ jobs:
       - name: deploy
         run: |
           echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
+          chmod 700 ~/ssh_key
           ssh -i ~/ssh_key -o StrictHostKeyChecking=no ubuntu@13.51.177.234
           cd test-devops
           git pull
