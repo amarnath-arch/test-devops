@@ -13,4 +13,5 @@ jobs:
           echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
           chmod 700 ~/ssh_key
           ssh -i ~/ssh_key -o StrictHostKeyChecking=no ubuntu@13.51.177.234 -t "cd test-devops && 
-          git pull && npm install && npm run build && npm run start"
+          git pull && export PATH=/home/ubuntu/.nvm/versions/node/v24.12.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+          && npm install && npm run build && pm2 restart http-server"
