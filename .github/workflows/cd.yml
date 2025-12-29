@@ -5,9 +5,9 @@ on:
     branches: [main]
 
 jobs:
-  deploy the changes:
+  deploy-the-changes:
     runs-on: ubuntu-latest
     steps:
-      -name: deploy
-      -run: |
-        echo "hello world"
+      - name: deploy
+        run: |
+          echo "hello world"
