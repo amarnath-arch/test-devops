@@ -12,9 +12,5 @@ jobs:
         run: |
           echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
           chmod 700 ~/ssh_key
-          ssh -i ~/ssh_key -o StrictHostKeyChecking=no ubuntu@13.51.177.234
-          cd test-devops
-          git pull
-          npm install
-          npm run build
-          npm run start
+          ssh -i ~/ssh_key -o StrictHostKeyChecking=no ubuntu@13.51.177.234 -t "cd test-devops && 
+          git pull && npm install && npm run build && npm run start"
