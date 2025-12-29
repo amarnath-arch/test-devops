@@ -9,4 +9,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/hello", (req, res) => {
+  res.json({
+    message: "hello to you my friend",
+  });
+});
+
 app.listen(3000);
