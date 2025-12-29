@@ -1,0 +1,13 @@
+name: Continous Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy the changes:
+    runs-on: ubuntu-latest
+    steps:
+      -name: deploy
+      -run: |
+        echo "hello world"
